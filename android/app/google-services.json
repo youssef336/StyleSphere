@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "725140031864",
+    "project_id": "stylesphere-e3ab7",
+    "storage_bucket": "stylesphere-e3ab7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:725140031864:android:d59647de6ff43f9df7e08d",
+        "android_client_info": {
+          "package_name": "com.example.stylesphere_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCk4szWweKrQGAcn54mwXXMF7RVKiH9O2g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

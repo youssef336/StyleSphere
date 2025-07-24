@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stylesphere_app/core/helper_functions/build_error_bar.dart';
 import 'package:stylesphere_app/core/widgets/custom_modal_progress_hub.dart';
 import 'package:stylesphere_app/features/auth/presentation/manager/cubits/sign_up/sign_up_cubit.dart';
+import 'package:stylesphere_app/features/auth/presentation/views/widgets/sign_up_view_body.dart';
 
 class SignUpViewBodyBlocConsumer extends StatelessWidget {
   const SignUpViewBodyBlocConsumer({super.key});
