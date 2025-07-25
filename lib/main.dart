@@ -2,7 +2,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:stylesphere_app/core/helper_functions/on_generate_routes.dart';
 import 'package:stylesphere_app/core/services/get_it_service.dart';
-import 'package:stylesphere_app/features/home/presentation/views/home_view.dart';
 import 'package:stylesphere_app/features/splash/presentation/views/splash_view.dart';
 import 'package:stylesphere_app/firebase_options.dart';
 
@@ -20,10 +19,10 @@ class StyleSphere extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      themeMode: ThemeMode.light,
-      title: 'Flutter Demo',
+      title: 'Stylesphere',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        scaffoldBackgroundColor:
+            Colors.white, // 👈 Change this to your desired background color,
       ),
       onGenerateRoute: onGenerateRoute,
       initialRoute: SplashView.routeName,

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:stylesphere_app/constant.dart';
+import 'package:stylesphere_app/core/utils/assets.dart';
 import 'package:stylesphere_app/core/widgets/custom_buttom.dart';
 import 'package:stylesphere_app/core/widgets/custom_text_feild.dart';
 import 'package:stylesphere_app/features/auth/presentation/manager/cubits/sign_up/sign_up_cubit.dart';
-import 'package:stylesphere_app/features/auth/presentation/views/login_view.dart';
 
 class SignUpViewBody extends StatefulWidget {
   const SignUpViewBody({super.key});
@@ -29,6 +31,11 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Hero(
+              tag: KHeroAssetsLogo,
+              child: SvgPicture.asset(Assets.assetsLogoLogo),
+            ),
+            const SizedBox(height: 20),
             CustomTextFormFeild(
               hintText: "Name",
               textInputType: TextInputType.text,
@@ -64,7 +71,6 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                     email: Email,
                     password: Password,
                   );
-                  Navigator.pop(context);
                 }
               },
             ),
@@ -82,7 +88,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                     style: TextStyle(color: Colors.blue, fontSize: 16),
                   ),
                   onTap: () {
-                    Navigator.pushNamed(context, LoginView.routeName);
+                    Navigator.pop(context);
                   },
                 ),
               ],
