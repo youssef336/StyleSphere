@@ -20,10 +20,7 @@ class StyleSphere extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Stylesphere',
-      theme: ThemeData(
-        scaffoldBackgroundColor:
-            Colors.white, // 👈 Change this to your desired background color,
-      ),
+      theme: ThemeData(scaffoldBackgroundColor: Colors.white),
       onGenerateRoute: onGenerateRoute,
       initialRoute: SplashView.routeName,
       debugShowCheckedModeBanner: false,

@@ -23,77 +23,82 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Form(
-        key: formKey,
-        autovalidateMode: autovalidateMode,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Hero(
-              tag: KHeroAssetsLogo,
-              child: SvgPicture.asset(Assets.assetsLogoLogo),
-            ),
-            const SizedBox(height: 20),
-            CustomTextFormFeild(
-              hintText: "Name",
-              textInputType: TextInputType.text,
-              onSaved: (p0) {
-                Name = p0!;
-              },
-            ),
-            const SizedBox(height: 10),
-            CustomTextFormFeild(
-              hintText: "Email",
-              textInputType: TextInputType.emailAddress,
-              onSaved: (p0) {
-                Email = p0!;
-              },
-            ),
-            const SizedBox(height: 10),
-            CustomTextFormFeild(
-              hintText: "Password",
-              textInputType: TextInputType.text,
-              obscureText: true,
-              onSaved: (p0) {
-                Password = p0!;
-              },
-            ),
-            const SizedBox(height: 40),
-            CustomButtom(
-              text: 'Sign up',
-              onPressed: () {
-                if (formKey.currentState!.validate()) {
-                  formKey.currentState!.save();
-                  context.read<SignUpCubit>().signUpUser(
-                    name: Name,
-                    email: Email,
-                    password: Password,
-                  );
-                }
-              },
-            ),
-            const SizedBox(height: 5),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text(
-                  "have an account? ",
-                  style: TextStyle(color: Colors.black),
-                ),
-                GestureDetector(
-                  child: const Text(
-                    "Login",
-                    style: TextStyle(color: Colors.blue, fontSize: 16),
+    return SingleChildScrollView(
+      child: Padding(
+        padding: EdgeInsets.symmetric(
+          horizontal: 16,
+          vertical: MediaQuery.of(context).size.height * 0.22,
+        ),
+        child: Form(
+          key: formKey,
+          autovalidateMode: autovalidateMode,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Hero(
+                tag: KHeroAssetsLogo,
+                child: SvgPicture.asset(Assets.assetsLogoLogo),
+              ),
+              const SizedBox(height: 20),
+              CustomTextFormFeild(
+                hintText: "Name",
+                textInputType: TextInputType.text,
+                onSaved: (p0) {
+                  Name = p0!;
+                },
+              ),
+              const SizedBox(height: 10),
+              CustomTextFormFeild(
+                hintText: "Email",
+                textInputType: TextInputType.emailAddress,
+                onSaved: (p0) {
+                  Email = p0!;
+                },
+              ),
+              const SizedBox(height: 10),
+              CustomTextFormFeild(
+                hintText: "Password",
+                textInputType: TextInputType.text,
+                obscureText: true,
+                onSaved: (p0) {
+                  Password = p0!;
+                },
+              ),
+              const SizedBox(height: 40),
+              CustomButtom(
+                text: 'Sign up',
+                onPressed: () {
+                  if (formKey.currentState!.validate()) {
+                    formKey.currentState!.save();
+                    context.read<SignUpCubit>().signUpUser(
+                      name: Name,
+                      email: Email,
+                      password: Password,
+                    );
+                  }
+                },
+              ),
+              const SizedBox(height: 5),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    "have an account? ",
+                    style: TextStyle(color: Colors.black),
                   ),
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                ),
-              ],
-            ),
-          ],
+                  GestureDetector(
+                    child: const Text(
+                      "Login",
+                      style: TextStyle(color: Colors.blue, fontSize: 16),
+                    ),
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

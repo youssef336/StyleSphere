@@ -9,13 +9,14 @@ part 'login_state.dart';
 class LoginCubit extends Cubit<LoginState> {
   final AuthRepo loginRepo;
   LoginCubit(this.loginRepo) : super(LoginInitial());
-
+  bool isSuccess = false;
   Future<void> loginUser(String email, String password) async {
+    isSuccess = false;
     emit(LoginLoading());
     final result = await loginRepo.loginUser(email, password);
     result.fold(
       (l) => emit(LoginError(message: l.message)),
-      (r) => emit(LoginSuccess()),
+      (r) => emit(LoginSuccess(isSuccess: isSuccess = true)),
     );
   }
 }
