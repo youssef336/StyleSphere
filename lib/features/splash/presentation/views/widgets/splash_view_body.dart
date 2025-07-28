@@ -18,7 +18,11 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   @override
   void initState() {
     Future.delayed(const Duration(milliseconds: 1880)).then((value) {
-      Navigator.pushReplacementNamed(context, LoginView.routeName);
+      if (isUserLoggedIn()) {
+        Navigator.pushReplacementNamed(context, HomeView.routeName);
+      } else {
+        Navigator.pushReplacementNamed(context, LoginView.routeName);
+      }
     });
     super.initState();
   }

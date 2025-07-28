@@ -7,16 +7,18 @@ class CustomAppBar2 extends StatelessWidget {
     required this.title,
     required this.sufex,
     required this.prefex,
+    this.height = 60,
   });
   final String title;
   final String sufex;
   final String prefex;
+  final double height;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
-      height: 60,
+      height: height,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8),
         child: Row(

@@ -110,6 +110,12 @@ class _LoginViewBodyState extends State<LoginViewBody> {
   }
 
   @override
+  void dispose() {
+    controller?.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
