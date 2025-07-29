@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:stylesphere_app/core/utils/assets.dart';
+import 'package:stylesphere_app/features/home/doman/entities/item_entity.dart';
 import 'package:stylesphere_app/features/home/presentation/views/widgets/custom_scrollable_sheet.dart';
 import 'package:stylesphere_app/features/home/presentation/views/widgets/filter_and_sort.dart';
 
 class ModelDetailsBody extends StatelessWidget {
-  const ModelDetailsBody({super.key});
+  const ModelDetailsBody({super.key, required this.item});
+  final ItemEntity item;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,7 @@ class ModelDetailsBody extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8),
                   child: Image.asset(
-                    Assets.assetsImagesModelsModel1,
+                    item.image,
                     fit: BoxFit.fitHeight,
                     width: double.infinity,
                   ),
@@ -38,7 +40,7 @@ class ModelDetailsBody extends StatelessWidget {
             ],
           ),
         ),
-        const CustomScrollableSheet(),
+        CustomScrollableSheet(item: item),
       ],
     );
   }

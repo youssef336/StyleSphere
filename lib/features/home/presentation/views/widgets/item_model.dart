@@ -52,7 +52,11 @@ class _ItemModelState extends State<ItemModel> {
 
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, ModelDetails.routeName);
+        Navigator.pushNamed(
+          context,
+          ModelDetails.routeName,
+          arguments: widget.item,
+        );
       },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

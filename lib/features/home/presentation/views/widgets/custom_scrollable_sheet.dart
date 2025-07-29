@@ -8,8 +8,8 @@ import 'package:stylesphere_app/features/home/presentation/views/widgets/custom_
 import 'package:stylesphere_app/features/home/presentation/views/widgets/item_model.dart';
 
 class CustomScrollableSheet extends StatefulWidget {
-  const CustomScrollableSheet({super.key});
-
+  const CustomScrollableSheet({super.key, required this.item});
+  final ItemEntity item;
   @override
   State<CustomScrollableSheet> createState() => _CustomScrollableSheetState();
 }
@@ -45,16 +45,19 @@ class _CustomScrollableSheetState extends State<CustomScrollableSheet> {
                 ),
               ),
               const SizedBox(height: 12),
-              const Text(
-                "Classic Tailored Fit Men's Dress Shirt",
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              Text(
+                widget.item.name,
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               const SizedBox(height: 8),
               Row(
                 children: [
-                  const Text(
-                    "£99.99",
-                    style: TextStyle(
+                  Text(
+                    widget.item.price,
+                    style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
