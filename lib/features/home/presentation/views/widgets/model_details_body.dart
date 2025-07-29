@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stylesphere_app/core/utils/assets.dart';
+import 'package:stylesphere_app/features/home/presentation/views/widgets/custom_scrollable_sheet.dart';
 import 'package:stylesphere_app/features/home/presentation/views/widgets/filter_and_sort.dart';
 
 class ModelDetailsBody extends StatelessWidget {
@@ -37,134 +38,7 @@ class ModelDetailsBody extends StatelessWidget {
             ],
           ),
         ),
-
-        DraggableScrollableSheet(
-          initialChildSize: 0.15,
-          minChildSize: 0.15,
-          maxChildSize: 0.845,
-          builder: (context, scrollController) {
-            return Container(
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-              ),
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-              child: ListView(
-                controller: scrollController,
-                children: const [
-                  Center(
-                    child: SizedBox(
-                      width: 40,
-                      height: 5,
-                      child: DecoratedBox(
-                        decoration: BoxDecoration(
-                          color: Colors.grey,
-                          borderRadius: BorderRadius.all(Radius.circular(4)),
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 12),
-                  Text(
-                    "Model Name",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(height: 8),
-                  Text(
-                    "£99.99",
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.black87,
-                    ),
-                  ),
-                  SizedBox(height: 16),
-                  Text(
-                    "This is a stylish and comfortable model made from high-quality materials. Available in multiple sizes.",
-                    style: TextStyle(fontSize: 14, color: Colors.grey),
-                  ),
-                  Text(
-                    "Model Name",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(height: 8),
-                  Text(
-                    "£99.99",
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.black87,
-                    ),
-                  ),
-                  SizedBox(height: 16),
-                  Text(
-                    "This is a stylish and comfortable model made from high-quality materials. Available in multiple sizes.",
-                    style: TextStyle(fontSize: 14, color: Colors.grey),
-                  ),
-                  Text(
-                    "Model Name",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(height: 8),
-                  Text(
-                    "£99.99",
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.black87,
-                    ),
-                  ),
-                  SizedBox(height: 16),
-                  Text(
-                    "This is a stylish and comfortable model made from high-quality materials. Available in multiple sizes.",
-                    style: TextStyle(fontSize: 14, color: Colors.grey),
-                  ),
-                  Text(
-                    "Model Name",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(height: 8),
-                  Text(
-                    "£99.99",
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.black87,
-                    ),
-                  ),
-                  SizedBox(height: 16),
-                  Text(
-                    "This is a stylish and comfortable model made from high-quality materials. Available in multiple sizes.",
-                    style: TextStyle(fontSize: 14, color: Colors.grey),
-                  ),
-                  Text(
-                    "Model Name",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(height: 8),
-                  Text(
-                    "£99.99",
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.black87,
-                    ),
-                  ),
-                  SizedBox(height: 16),
-                  Text(
-                    "This is a stylish and comfortable model made from high-quality materials. Available in multiple sizes.",
-                    style: TextStyle(fontSize: 14, color: Colors.grey),
-                  ),
-                  SizedBox(height: 20),
-                  ElevatedButton(
-                    onPressed: null, // Add your logic here
-                    child: Text("Add to Cart"),
-                  ),
-                ],
-              ),
-            );
-          },
-        ),
+        const CustomScrollableSheet(),
       ],
     );
   }

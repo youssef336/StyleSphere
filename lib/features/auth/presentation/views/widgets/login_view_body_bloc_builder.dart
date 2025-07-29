@@ -4,7 +4,6 @@ import 'package:stylesphere_app/core/helper_functions/build_error_bar.dart';
 import 'package:stylesphere_app/core/widgets/custom_modal_progress_hub.dart';
 import 'package:stylesphere_app/features/auth/presentation/manager/cubits/login/login_cubit.dart';
 import 'package:stylesphere_app/features/auth/presentation/views/widgets/login_view_body.dart';
-import 'package:stylesphere_app/features/home/presentation/views/home_view.dart';
 
 class LoginViewBodyBlocBuilder extends StatelessWidget {
   const LoginViewBodyBlocBuilder({super.key});

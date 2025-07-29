@@ -54,9 +54,21 @@ class Assets {
   /// assets/logo/logo.svg
   static const String assetsLogoLogo = "assets/logo/logo.svg";
 
+  /// Assets for assetsSvgsArrowDown
+  /// assets/svgs/arrow_down.svg
+  static const String assetsSvgsArrowDown = "assets/svgs/arrow_down.svg";
+
   /// Assets for assetsSvgsArrowLeft
   /// assets/svgs/arrow-left.svg
   static const String assetsSvgsArrowLeft = "assets/svgs/arrow-left.svg";
+
+  /// Assets for assetsSvgsArrowUp
+  /// assets/svgs/arrow_up.svg
+  static const String assetsSvgsArrowUp = "assets/svgs/arrow_up.svg";
+
+  /// Assets for assetsSvgsBrand
+  /// assets/svgs/Brand.svg
+  static const String assetsSvgsBrand = "assets/svgs/Brand.svg";
 
   /// Assets for assetsSvgsCart
   /// assets/svgs/cart.svg
@@ -70,9 +82,21 @@ class Assets {
   /// assets/svgs/grid.svg
   static const String assetsSvgsGrid = "assets/svgs/grid.svg";
 
+  /// Assets for assetsSvgsGroup
+  /// assets/svgs/Group.svg
+  static const String assetsSvgsGroup = "assets/svgs/Group.svg";
+
   /// Assets for assetsSvgsGroups
   /// assets/svgs/groups.svg
   static const String assetsSvgsGroups = "assets/svgs/groups.svg";
+
+  /// Assets for assetsSvgsHistory
+  /// assets/svgs/History.svg
+  static const String assetsSvgsHistory = "assets/svgs/History.svg";
+
+  /// Assets for assetsSvgsHugeiconsTruckReturn
+  /// assets/svgs/hugeicons_truck-return.svg
+  static const String assetsSvgsHugeiconsTruckReturn = "assets/svgs/hugeicons_truck-return.svg";
 
   /// Assets for assetsSvgsMenu
   /// assets/svgs/menu.svg
@@ -82,9 +106,25 @@ class Assets {
   /// assets/svgs/notification.svg
   static const String assetsSvgsNotification = "assets/svgs/notification.svg";
 
+  /// Assets for assetsSvgsProductDetails
+  /// assets/svgs/Product_details.svg
+  static const String assetsSvgsProductDetails = "assets/svgs/Product_details.svg";
+
+  /// Assets for assetsSvgsRectangle38
+  /// assets/svgs/Rectangle_38.svg
+  static const String assetsSvgsRectangle38 = "assets/svgs/Rectangle_38.svg";
+
   /// Assets for assetsSvgsSelect
   /// assets/svgs/select.svg
   static const String assetsSvgsSelect = "assets/svgs/select.svg";
+
+  /// Assets for assetsSvgsSizeandfit
+  /// assets/svgs/Sizeandfit.svg
+  static const String assetsSvgsSizeandfit = "assets/svgs/Sizeandfit.svg";
+
+  /// Assets for assetsVideoAnimatedLoginCharacter
+  /// assets/video/animated_login_character.riv
+  static const String assetsVideoAnimatedLoginCharacter = "assets/video/animated_login_character.riv";
 
   /// Assets for assetsVideoVideo
   /// assets/video/video.mp4

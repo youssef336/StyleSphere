@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:stylesphere_app/core/utils/assets.dart';
 import 'package:stylesphere_app/core/widgets/custom_app_bar2.dart';
 import 'package:stylesphere_app/features/home/presentation/views/widgets/list_categories.dart';

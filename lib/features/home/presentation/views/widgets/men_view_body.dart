@@ -17,7 +17,7 @@ class MenViewBody extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 4),
             child: GridView.builder(
-              itemCount: 8,
+              itemCount: 5,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: 4,
@@ -25,7 +25,7 @@ class MenViewBody extends StatelessWidget {
                 childAspectRatio: 0.594,
               ),
               itemBuilder: (context, index) {
-                return const ItemModel();
+                return ItemModel(image: images[index]);
               },
             ),
           ),
@@ -34,3 +34,11 @@ class MenViewBody extends StatelessWidget {
     );
   }
 }
+
+List<String> images = [
+  Assets.assetsImagesModelsModel1,
+  Assets.assetsImagesModelsModel2,
+  Assets.assetsImagesModelsModel3,
+  Assets.assetsImagesModelsModel4,
+  Assets.assetsImagesModelsModel1,
+];

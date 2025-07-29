@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:stylesphere_app/constant.dart';
+import 'package:stylesphere_app/core/services/shared_preferences_service.dart';
 import 'package:stylesphere_app/core/utils/assets.dart';
 import 'package:stylesphere_app/features/home/presentation/views/model_details.dart';
 
 class ItemModel extends StatefulWidget {
-  const ItemModel({super.key});
+  const ItemModel({super.key, required this.image});
 
   @override
   State<ItemModel> createState() => _ItemModelState();
+  final String image;
 }
 
 class _ItemModelState extends State<ItemModel> {
-  bool isFavorite = false;
+  bool isFavorite = Prefs.getBool(Kisfavorite) ?? false;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -29,7 +32,7 @@ class _ItemModelState extends State<ItemModel> {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(8),
               child: Image.asset(
-                Assets.assetsImagesModelsModel1,
+                widget.image,
                 fit: BoxFit.fitHeight,
                 width: double.infinity,
               ),
@@ -60,6 +63,7 @@ class _ItemModelState extends State<ItemModel> {
                 onPressed: () {
                   setState(() {
                     isFavorite = !isFavorite;
+                    Prefs.setBool(Kisfavorite, isFavorite);
                   });
                 },
               ),
