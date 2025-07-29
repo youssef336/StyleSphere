@@ -20,7 +20,7 @@ class HomeViewBody extends StatelessWidget {
           sufex: Assets.assetsSvgsMenu,
         ),
         Positioned(
-          bottom: 70,
+          bottom: 10,
           child: Container(
             color: Colors.white,
             width: MediaQuery.of(context).size.width,

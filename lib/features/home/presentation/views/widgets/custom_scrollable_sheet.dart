@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:stylesphere_app/core/utils/assets.dart';
+import 'package:stylesphere_app/features/home/doman/entities/item_entity.dart';
 import 'package:stylesphere_app/features/home/presentation/views/widgets/custom_scroll_sheet_item.dart';
 import 'package:stylesphere_app/features/home/presentation/views/widgets/item_model.dart';
 
@@ -239,7 +240,7 @@ class _CustomScrollableSheetState extends State<CustomScrollableSheet> {
                         children: [
                           SizedBox(
                             width: 170,
-                            child: ItemModel(image: images[index]),
+                            child: ItemModel(item: ItemEntity.items[index]),
                           ),
                           const SizedBox(width: 10),
                         ],

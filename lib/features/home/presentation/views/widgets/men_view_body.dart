@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:stylesphere_app/core/utils/assets.dart';
+import 'package:stylesphere_app/features/home/doman/entities/item_entity.dart';
 import 'package:stylesphere_app/features/home/presentation/views/widgets/filter_and_sort.dart';
 import 'package:stylesphere_app/features/home/presentation/views/widgets/item_model.dart';
 
 class MenViewBody extends StatelessWidget {
   const MenViewBody({super.key});
-
+  @override
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -25,7 +26,7 @@ class MenViewBody extends StatelessWidget {
                 childAspectRatio: 0.594,
               ),
               itemBuilder: (context, index) {
-                return ItemModel(image: images[index]);
+                return ItemModel(item: ItemEntity.items[index]);
               },
             ),
           ),
