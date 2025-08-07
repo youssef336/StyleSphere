@@ -13,6 +13,8 @@ import 'package:stylesphere_app/features/auth/presentation/views/sign_up_view.da
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stylesphere_app/features/home/presentation/views/home_view.dart';
 
+enum LoginMethod { email, google, facebook }
+
 class LoginViewBody extends StatefulWidget {
   const LoginViewBody({super.key});
 
@@ -91,23 +93,46 @@ class _LoginViewBodyState extends State<LoginViewBody> {
     isChecking?.change(false);
   }
 
-  void LoginClick() async {
+  void LoginClick(LoginMethod method) async {
     isChecking?.change(false);
     isHandsUp?.change(false);
-    if (formKey.currentState!.validate()) {
-      formKey.currentState!.save();
-      await context.read<LoginCubit>().loginUser(Email, Password);
-      if (context.read<LoginCubit>().isSuccess == true) {
-        trigSuccess?.fire();
-        Future.delayed(const Duration(milliseconds: 1500)).then((value) {
+
+    try {
+      switch (method) {
+        case LoginMethod.email:
+          if (formKey.currentState!.validate()) {
+            formKey.currentState!.save();
+            await context.read<LoginCubit>().loginUser(Email, Password);
+            if (context.read<LoginCubit>().isSuccess == true) {
+              trigSuccess?.fire();
+              await Future.delayed(const Duration(milliseconds: 1500));
+              Navigator.pushNamed(context, HomeView.routeName);
+            } else {
+              trigFail?.fire();
+            }
+          } else {
+            trigFail?.fire();
+          }
+          break;
+
+        case LoginMethod.google:
+          await context.read<LoginCubit>().signInWithGoogle();
+          trigSuccess?.fire();
+          await Future.delayed(const Duration(milliseconds: 1500));
           Navigator.pushNamed(context, HomeView.routeName);
-        });
-      } else {
-        trigFail?.fire();
+          break;
+
+        case LoginMethod.facebook:
+          await context.read<LoginCubit>().signInWithfacebook();
+          trigSuccess?.fire();
+          await Future.delayed(const Duration(milliseconds: 1500));
+          Navigator.pushNamed(context, HomeView.routeName);
+          break;
       }
-    } else {
+    } catch (e) {
       trigFail?.fire();
     }
+
     setState(() {});
   }
 
@@ -183,7 +208,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 CustomButtom(
                   text: 'Login',
                   onPressed: () {
-                    LoginClick();
+                    LoginClick(LoginMethod.email);
                   },
                 ),
                 const SizedBox(height: 5),
@@ -208,21 +233,34 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 const SizedBox(height: 5),
                 GestureDetector(
                   onTap: () {
-                    context.read<LoginCubit>().signInWithGoogle();
+                    LoginClick(LoginMethod.google);
                   },
                   child: Container(
                     padding: const EdgeInsets.all(10),
                     height: 50,
-                    decoration: BoxDecoration(
-                      color: Colors.green,
-                      borderRadius: BorderRadius.circular(10),
+                    decoration: ShapeDecoration(
+                      color: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        side: const BorderSide(
+                          width: 1,
+                          color: Color(0xFFDCDEDE),
+                        ),
+                        borderRadius: BorderRadius.circular(16),
+                      ),
                     ),
-                    child: const Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Text(
+                        const SizedBox(width: 100),
+                        const Text(
                           " Login with Google",
                           style: TextStyle(color: Colors.black),
+                        ),
+                        const SizedBox(width: 100),
+                        SvgPicture.asset(
+                          Assets.assetsLogoGoogle,
+                          width: 20,
+                          height: 20,
                         ),
                       ],
                     ),
@@ -231,21 +269,34 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 const SizedBox(height: 10),
                 GestureDetector(
                   onTap: () {
-                    context.read<LoginCubit>().signInWithfacebook();
+                    LoginClick(LoginMethod.facebook);
                   },
                   child: Container(
                     padding: const EdgeInsets.all(10),
                     height: 50,
-                    decoration: BoxDecoration(
-                      color: Colors.green,
-                      borderRadius: BorderRadius.circular(10),
+                    decoration: ShapeDecoration(
+                      color: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        side: const BorderSide(
+                          width: 1,
+                          color: Color(0xFFDCDEDE),
+                        ),
+                        borderRadius: BorderRadius.circular(16),
+                      ),
                     ),
-                    child: const Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Text(
+                        const SizedBox(width: 100),
+                        const Text(
                           " Login with facebook",
                           style: TextStyle(color: Colors.black),
+                        ),
+                        const SizedBox(width: 88),
+                        SvgPicture.asset(
+                          Assets.assetsLogoFacebook,
+                          width: 20,
+                          height: 20,
                         ),
                       ],
                     ),

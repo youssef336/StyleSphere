@@ -109,22 +109,27 @@ class FirebaseAuthService implements AuthService {
   @override
   Future<User> signInWithFacebook() async {
     try {
-      // Trigger the Facebook sign-in flow
-      final LoginResult result = await FacebookAuth.instance.login();
+      // Ask for email and public profile permissions
+      final LoginResult result = await FacebookAuth.instance.login(
+        permissions: ['email', 'public_profile'],
+      );
 
-      // Check for success
       if (result.status != LoginStatus.success || result.accessToken == null) {
         throw CustomException(
           message: 'Facebook login failed: ${result.message}',
         );
       }
 
+      // Optional: Fetch user profile data from Facebook Graph API
+      final userData = await FacebookAuth.instance.getUserData();
+      print('Facebook user data: $userData'); // ✅ Debug email etc.
+
       // Create Facebook credential
       final OAuthCredential credential = FacebookAuthProvider.credential(
         result.accessToken!.tokenString,
       );
 
-      // Sign in to Firebase with the Facebook credential
+      // Sign in to Firebase with Facebook credential
       final UserCredential userCredential = await FirebaseAuth.instance
           .signInWithCredential(credential);
 
@@ -134,7 +139,11 @@ class FirebaseAuthService implements AuthService {
         throw CustomException(message: 'No user returned from Facebook login.');
       }
 
-      // Store the user if needed
+      // Debug print Firebase user data
+      print('Firebase User Email: ${user.email}');
+      print('Firebase User Name: ${user.displayName}');
+
+      // Save the user if needed
       clinet = user;
       return clinet;
     } on FirebaseAuthException catch (e) {

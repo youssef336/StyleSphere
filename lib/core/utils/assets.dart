@@ -42,6 +42,14 @@ class Assets {
   /// assets/images/shadow.png
   static const String assetsImagesShadow = "assets/images/shadow.png";
 
+  /// Assets for assetsLogoFacebook
+  /// assets/logo/facebook.svg
+  static const String assetsLogoFacebook = "assets/logo/facebook.svg";
+
+  /// Assets for assetsLogoGoogle
+  /// assets/logo/google.svg
+  static const String assetsLogoGoogle = "assets/logo/google.svg";
+
   /// Assets for assetsLogoIcon
   /// assets/logo/icon.jpg
   static const String assetsLogoIcon = "assets/logo/icon.jpg";
@@ -122,9 +130,17 @@ class Assets {
   /// assets/svgs/Sizeandfit.svg
   static const String assetsSvgsSizeandfit = "assets/svgs/Sizeandfit.svg";
 
+  /// Assets for assetsSvgsSmoothScrollSetup
+  /// assets/svgs/SmoothScroll_Setup.exe
+  static const String assetsSvgsSmoothScrollSetup = "assets/svgs/SmoothScroll_Setup.exe";
+
   /// Assets for assetsVideoAnimatedLoginCharacter
   /// assets/video/animated_login_character.riv
   static const String assetsVideoAnimatedLoginCharacter = "assets/video/animated_login_character.riv";
+
+  /// Assets for assetsVideoTabbarAnimation
+  /// assets/video/tabbar_animation.riv
+  static const String assetsVideoTabbarAnimation = "assets/video/tabbar_animation.riv";
 
   /// Assets for assetsVideoVideo
   /// assets/video/video.mp4
