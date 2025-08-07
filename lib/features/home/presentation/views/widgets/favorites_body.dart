@@ -26,7 +26,7 @@ class _FavoritesBodyState extends State<FavoritesBody> {
 
     for (var item in allItems) {
       final key = '${item.image}_favorite';
-      final liked = Prefs.getBool(key) ?? false;
+      final liked = Prefs.getBool(key);
       if (liked) {
         favorites.add(item);
       }

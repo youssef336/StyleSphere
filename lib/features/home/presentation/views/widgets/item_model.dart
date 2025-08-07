@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:stylesphere_app/constant.dart';
 import 'package:stylesphere_app/core/services/shared_preferences_service.dart';
-import 'package:stylesphere_app/core/utils/assets.dart';
 import 'package:stylesphere_app/features/home/doman/entities/item_entity.dart';
 import 'package:stylesphere_app/features/home/presentation/views/model_details.dart';
 
@@ -27,7 +25,7 @@ class _ItemModelState extends State<ItemModel> {
     final value = Prefs.getBool(key);
     if (mounted) {
       setState(() {
-        isFavorite = value ?? false;
+        isFavorite = value;
       });
     }
   }

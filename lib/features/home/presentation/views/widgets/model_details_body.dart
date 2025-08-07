@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:stylesphere_app/core/utils/assets.dart';
 import 'package:stylesphere_app/features/home/doman/entities/item_entity.dart';
 import 'package:stylesphere_app/features/home/presentation/views/widgets/custom_scrollable_sheet.dart';
 import 'package:stylesphere_app/features/home/presentation/views/widgets/filter_and_sort.dart';
