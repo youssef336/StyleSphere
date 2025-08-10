@@ -251,13 +251,15 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        const SizedBox(width: 100),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.25,
+                        ),
                         const Text(
                           " Login with Google",
                           style: TextStyle(color: Colors.black),
                         ),
                         SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.244,
+                          width: MediaQuery.of(context).size.width * 0.22,
                         ),
                         SvgPicture.asset(
                           Assets.assetsLogoGoogle,
@@ -289,13 +291,15 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        const SizedBox(width: 100),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.25,
+                        ),
                         const Text(
                           " Login with facebook",
                           style: TextStyle(color: Colors.black),
                         ),
                         SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.21,
+                          width: MediaQuery.of(context).size.width * 0.188,
                         ),
                         SvgPicture.asset(
                           Assets.assetsLogoFacebook,

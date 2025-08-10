@@ -54,11 +54,11 @@ class _FavoritesBodyState extends State<FavoritesBody> {
       padding: const EdgeInsets.symmetric(horizontal: 8),
       child: GridView.builder(
         itemCount: favoriteItems.length,
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           crossAxisSpacing: 4,
           mainAxisSpacing: 1,
-          childAspectRatio: 0.588,
+          childAspectRatio: MediaQuery.of(context).size.width / 690,
         ),
         itemBuilder: (context, index) {
           return ItemModel(item: favoriteItems[index]);
