@@ -230,7 +230,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 5),
+                const SizedBox(height: 15),
                 GestureDetector(
                   onTap: () {
                     LoginClick(LoginMethod.google);
@@ -256,7 +256,9 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                           " Login with Google",
                           style: TextStyle(color: Colors.black),
                         ),
-                        const SizedBox(width: 100),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.244,
+                        ),
                         SvgPicture.asset(
                           Assets.assetsLogoGoogle,
                           width: 20,
@@ -292,7 +294,9 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                           " Login with facebook",
                           style: TextStyle(color: Colors.black),
                         ),
-                        const SizedBox(width: 88),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.21,
+                        ),
                         SvgPicture.asset(
                           Assets.assetsLogoFacebook,
                           width: 20,

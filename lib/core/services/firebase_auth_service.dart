@@ -121,8 +121,7 @@ class FirebaseAuthService implements AuthService {
       }
 
       // Optional: Fetch user profile data from Facebook Graph API
-      final userData = await FacebookAuth.instance.getUserData();
-      print('Facebook user data: $userData'); // ✅ Debug email etc.
+      // ✅ Debug email etc.
 
       // Create Facebook credential
       final OAuthCredential credential = FacebookAuthProvider.credential(
@@ -140,8 +139,6 @@ class FirebaseAuthService implements AuthService {
       }
 
       // Debug print Firebase user data
-      print('Firebase User Email: ${user.email}');
-      print('Firebase User Name: ${user.displayName}');
 
       // Save the user if needed
       clinet = user;

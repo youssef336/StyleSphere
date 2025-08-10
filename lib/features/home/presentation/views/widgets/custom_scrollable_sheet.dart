@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:stylesphere_app/core/services/shared_preferences_service.dart';
 import 'package:stylesphere_app/core/utils/assets.dart';
 import 'package:stylesphere_app/features/home/doman/entities/item_entity.dart';
 import 'package:stylesphere_app/features/home/presentation/views/widgets/custom_scroll_sheet_item.dart';
@@ -14,6 +15,33 @@ class CustomScrollableSheet extends StatefulWidget {
 
 class _CustomScrollableSheetState extends State<CustomScrollableSheet> {
   bool isFavorite = false;
+  @override
+  void initState() {
+    super.initState();
+    _loadFavoriteStatus();
+  }
+
+  Future<void> _loadFavoriteStatus() async {
+    final key = '${widget.item.image}_favorite'; // More unique than name
+    final value = Prefs.getBool(key);
+    if (mounted) {
+      setState(() {
+        isFavorite = value;
+      });
+    }
+  }
+
+  Future<void> _toggleFavorite() async {
+    final key = '${widget.item.image}_favorite';
+    final newValue = !(isFavorite);
+    await Prefs.setBool(key, newValue);
+    if (mounted) {
+      setState(() {
+        isFavorite = newValue;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return DraggableScrollableSheet(
@@ -72,11 +100,7 @@ class _CustomScrollableSheetState extends State<CustomScrollableSheet> {
                             color: Colors.black,
                           ),
                     color: Colors.red,
-                    onPressed: () {
-                      setState(() {
-                        isFavorite = !isFavorite;
-                      });
-                    },
+                    onPressed: _toggleFavorite,
                   ),
                 ],
               ),

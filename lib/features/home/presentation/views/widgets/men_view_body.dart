@@ -19,11 +19,11 @@ class MenViewBody extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 4),
             child: GridView.builder(
               itemCount: 5,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: 4,
                 mainAxisSpacing: 1,
-                childAspectRatio: 0.594,
+                childAspectRatio: MediaQuery.of(context).size.width / 690,
               ),
               itemBuilder: (context, index) {
                 return ItemModel(item: ItemEntity.items[index]);
