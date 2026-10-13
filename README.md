@@ -10,6 +10,11 @@
   <img src="https://img.shields.io/badge/Platform-Android%20%7C%20iOS-3DDC84?style=for-the-badge" alt="Android | iOS" />
 </p>
 
+<p align="center">
+  <img src="docs/screens.jpg" alt="Screens" width="100%"/>
+  <br/><sub>Home (runway) · Men · Product details</sub>
+</p>
+
 ## 📖 About
 
 StyleSphere is the front end of a fashion e-commerce app, built while working through a Flutter + Firebase e-commerce course. The home screen plays a looping runway video. Login uses an interactive **Rive** character that follows your typing, covers its eyes while you enter your password, and reacts when sign-in succeeds or fails. Authentication runs on **Firebase Auth** (email/password, Google and Facebook) and follows a clean-architecture layout: repositories return `Either<Failure, T>`, Cubits manage state and `get_it` handles dependency injection.
